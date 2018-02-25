@@ -1,0 +1,72 @@
+{% load static %}
+{# HTML5 declaration #}
+<!DOCTYPE html>
+<html>
+    {# Make modifiable head elements #}
+    <head>
+        <title>{% block title %}Home {% endblock title %} | CatchyRain</title>
+        {% block head_favicon %}
+            <link rel="icon" type="image/png"
+                  href="{% static 'main/favicon.ico' %}">
+        {% endblock head_favicon %}
+        {% block head_meta %}
+            {% block head_meta_charset %}
+                <meta http-equiv="Content-Type"
+                      content="text/html; charset=utf-8" />
+            {% endblock head_meta_charset %}
+            {% block head_meta_contentlanguage %}
+                <meta http-equiv="Content-Language" value="en-US" />
+            {% endblock head_meta_contentlanguage %}
+            {% block head_meta_viewport %}
+                <meta name="viewport"
+                      content="width=device-width, initial-scale=1.0">
+            {% endblock head_meta_viewport %}
+        {% endblock head_meta %}
+        {% block head_css %}
+            {% block head_css_site %}
+                <link href="{% static 'main/bootstrap.min.css' %}"
+                      rel="stylesheet" media="screen">
+                <link href="{% static 'main/theme.css' %}"
+                      rel="stylesheet" media="screen">
+            {% endblock head_css_site %}
+            {% block head_css_section %}{% endblock head_css_section %}
+            {% block head_css_page %}{% endblock head_css_page %}
+        {% endblock head_css %}
+    </head>
+<body>
+    {# Navigation Menu #}
+        <div class="sidenav">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    {# The Document Body #}
+        <div id="main">
+    <div id="site-wrapper">
+        {% block content %}
+            <h1>An introduction to RHW and the tool</h1>
+
+
+        <p></p>
+        <a class= "btn btn-info" href="{% url 'whyRWH'%}">Why RWH?</a>
+        <form action="{% url 'whyRWH'%}">
+            <input class= "btn btn-info" type="submit" value="Why RWH?" />
+        </form>
+        <p></p>
+        <button class= "btn btn-info" type = "button"> What is the tool for? </button>
+        <p></p>
+        <button class= "btn btn-info" type = "button"> How does the tool work? </button>
+        <p></p>
+        <button class= "btn btn-info" type = "button"> Who is the tool for? </button>
+        <img src="{% static 'main/mainpageholder.ico' %}" alt="Placeholder">
+        {% endblock content %}
+    </div>
+    {# The Footer #}
+        </div>
+    <div class="footer">
+        <div class="container">
+            <p>Copyright CatchyRain</p>
+        </div>
+    </div>
+</body>
