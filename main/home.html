@@ -1,0 +1,142 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<div class='container'>
+        <div class='row'>
+            <p></p>
+        </div>
+        <div class='row'>
+            <div class='col-2'>
+                <div class="alert alert-primary" role="alert" style=' min-height: 800px;'>
+                    Additional Information
+                    <div class='row'>
+                        <div class='col-1'>
+                            <div role="alert">
+                                <a class="btn btn-default" href="{% url 'whyRWH'%}">Calculator</a>
+                                <p></p>
+                                <a class="btn btn-default" href="{% url 'placeholder'%}">Why RWH?</a>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-10'>
+                <div class="alert alert-primary" role="alert" style=' min-height: 800px;'>
+                    <font size="+1">
+                        <b> Inputs and Map </b>
+                    </font>
+                    <p></p>
+
+                    <div class='row'>
+                        <div class="col-6">
+                             <form name="questionaire" onSubmit="results()">
+                                <label for="roofArea">Roof Area (m<sup>2</sup>) :
+                                </label>
+                                    <input type="number" name="roofArea" step="0.1" value="0" />
+                                    <input name="Submit" type="submit" value="Update" />
+                             </form>
+                        </div>
+
+                        <div class="col-6">
+                            <form name="questionaire" onSubmit="results()">
+                                <label for="roofSlope">Roof Slope (degrees):
+                                 </label>
+                             <input type="number" name="roofSlope" step="0.1" value="0" />
+                             <input name="Submit" type="submit" value="Update" />
+                            </form>
+                        </div>
+                        </div>
+                    <p></p>
+
+                    <div class='row'>
+                        <div class="col-4">
+                              <form action="">
+                                        Roof Type:
+                                        <select>
+                                          <option selected="selected">Tiled</option>
+                                            <option>Tin</option>
+                                        </select>
+                              </form>
+                        </div>
+
+                        <div class="col-4">
+                            <form action="">
+                                Number of People:
+                                <select>
+                                    <option selected="selected">1-5   </option>
+                                    <option>6-10   </option>
+                                    <option>11+    </option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <form action="">
+                                Type of User:
+                                <select>
+                                    <option selected="selected">Household</option>
+                                    <option>Business</option>
+                                    <option>School</option>
+                                    <option>Policymaker</option>
+                                </select>
+                            </form>
+                        </div>
+                        </div>
+                    <p></p>
+                    <div class="Row">
+                        <div class="Col-12">
+                            <form name="questionaire" onSubmit="results()">
+                                <label for="geographicalLocation">Geographical Location :
+                                </label>
+                                <input type="character" name="geographicalLocation" value="Enter Address">
+                             </form>
+                        </div>
+
+                    </div>
+                    <p></p>
+
+                    <div class="row">
+                        <div class='col-4'>
+                            <html>
+                                <head>
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                        <script>
+                                            $(document).ready(function(){
+                                            });
+                                         </script>
+                                </head>
+                        </div>
+                    </div>
+
+
+                        <div class='col-lg-2'>
+
+                        </div>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8224564.320628166!2d-99.40207906477661!3d22.63151805747975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1518608116251"
+                        width="800" height="600" frameborder="0" style="border:1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-12'>
+                <div class="alert alert-primary" role="alert">
+                    Outputs
+                            <div class="alert alert-primary" role="alert"><form name="questionaire" onSubmit="results()">
+                                <div class="col-6">
+                                    <h1>Output : </h1>
+                                     <h1 id="results"></h1>
+                                </div>
+                </form>
+                             </div>
+                    <div class='col-2'>
+                        <div class="alert alert-primary" role="alert">
+                            Proportion of precipitation harvested for use
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
