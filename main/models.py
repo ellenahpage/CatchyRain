@@ -19,8 +19,8 @@ class RainData(models.Model):
     rain_nov = models.DecimalField
     rain_dec = models.DecimalField
 
-    class Meta:
-        unique_together = ('longitude', 'latitude',)
+    #class Meta:
+    #   unique_together = ('longitude', 'latitude',)
 
     def __str__(self):
         return '<Longitude: {}, Latitude: {}>'.format(self.longitude, self.latitude)
